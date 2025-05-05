@@ -23,4 +23,3 @@ public class my
         }
 }
 
-my.main();
