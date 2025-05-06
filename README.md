@@ -48,18 +48,108 @@ class Program
 
 ### 2. Multilevel Inheritance  
    زنجیره‌ای از ارث‌بری بین چند کلاس شکل می‌گیرد.  
-   **(جایگذاری مثال مربوط به Multilevel Inheritance)**
+ ```csharp
+//this is our level 1 (base) class 
+public class Creature  
+{   
+    public void Breath() => Console.WriteLine("the Creature is breating");
+}
+//Animal is the level 2
+public class Animal : Creature
+{
+    public void Eat() => Console.WriteLine("the Animal is eating");
+}
+//and the level 3 so our chain would look like Cat -> Animal -> Creature
+public class Cat : Animal
+{
+    public void Speak() => Console.WriteLine("the Cat says Meow");
+}
+
+var myCat = new Cat();
+//the Breath method is inherited from the grandparent class (Creature) 
+myCat.Breath();
+//the Eat method is inherited from the parent class (Animal)
+myCat.Eat();
+//the Speak is defined inside the Cat class itself
+myCat.Speak();
+```
 
 ### 3. Hierarchical Inheritance  
    چندین کلاس فرزند از یک کلاس والد مشترک ارث می‌برند.  
-   **(جایگذاری مثال مربوط به Hierarchical Inheritance)**
+```csharp
+//this is our base class(superclass)
+public class Electronics
+{
+    public void TurnOn() => Console.WriteLine("the electronic is turning on");
+}
+//Phone and Laptop classes are subclasses derived from our superclass
+public class Phone : Electronics
+{
+    public void Calling() => Console.WriteLine("the phone is calling");
+}
+
+public class Laptop : Electronics
+{
+    public void Computing() => Console.WriteLine("the laptop is computing");
+}
+
+new Phone().Calling();
+new Laptop().Computing();
+```
 
 ### 4. Multiple Inheritance  
    یک کلاس از چندین کلاس والد ارث می‌برد (در زبان‌هایی مثل C++ و Python پشتیبانی می‌شود).  
-   **(جایگذاری مثال مربوط به Multiple Inheritance)**
+```csharp
+public interface ICall {void Calling();}
+public interface IPhoto {void TakingPhoto();}
+public interface IFlash {void FlashLight();}
+
+public class Phone : ICall, IPhoto, IFlash
+{
+    public void Calling() => Console.WriteLine("phone is calling");
+    public void TakingPhoto() => Console.WriteLine("phone is taking a photo");
+    public void FlashLight() => Console.WriteLine("phone's FlashLight is turned on");
+}
+
+new Phone().Calling();
+new Phone().TakingPhoto();
+new Phone().FlashLight();
+```
 ### 5. Hybrid Inheritance
    ترکیبی از چند نوع وراثت بالا.  
-   **(جایگذاری مثال مربوط به Hybrid Inheritance)**
+```csharp
+public class Device 
+{
+    public string Model{get;set;}
+}
+
+public interface ICamera
+{
+    void Photo();
+}
+public interface ICall
+{
+    void Calling();
+}
+public class Phone : Device, ICamera, ICall
+{
+    public void Photo() => Console.WriteLine($"{Model} is taking photo");   
+    public void Calling() => Console.WriteLine($"{Model} is making a call");
+}
+
+public class Camera :Device, ICamera
+{
+    public void Photo() => Console.WriteLine($"{Model} is taking photo");
+}
+
+var myPhone = new Phone{Model = "Galaxy s24"};
+myPhone.Photo();
+myPhone.Calling();
+
+
+var myCamera = new Camera{Model = "myRandomCamera"};
+myCamera.Photo();
+```
 
 ---
 
