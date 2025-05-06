@@ -282,6 +282,10 @@ Console.WriteLine(y);
 
 #### -Strategy Design Pattern
 
+الگوی طراحی Strategy (استراتژی) یکی از الگوهای رفتاری در برنامه‌نویسی شیءگرا است که به ما اجازه می‌دهد الگوریتم‌های مختلف را در کلاس‌های جداگانه پیاده‌سازی کرده و در زمان اجرا، بدون تغییر در کد اصلی، بین آن‌ها جابه‌جا شویم.
+در مثال زیر ما یک رابط ISortStrategy تعریف کرده‌ایم که متدی به نام Sort دارد. سپس یک کلاس BubbleSort این رابط را پیاده‌سازی می‌کند. کلاس Sorter به عنوان زمینه (Context) عمل می‌کند و استراتژی مورد نظر را از طریق سازنده دریافت می‌کند.
+
+
 
 ```csharp
 public interface ISortStrategy {
@@ -302,6 +306,13 @@ public class Sorter {
     public void Execute(List<int> data) => _strategy.Sort(data);
 }
 ```
+
+
+
+
+#### -liskov substitution principle (LSP)
+
+
 
 
 
