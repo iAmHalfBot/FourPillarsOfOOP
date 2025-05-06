@@ -182,14 +182,45 @@ myCamera.Photo();
 ### 1. Method Overloading (Compile-Time Polymorphism)
 
 در یک کلاس، متدهایی با نام یکسان ولی با پارامترهای متفاوت تعریف می‌کنیم.
-**(جایگذاری مثال مربوط به Overloading)**
+```csharp
+public class Arithmetic
+{
+    // Method overloading   
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+    public double Add(double a, double b)
+    {
+        return a + b;
+    }
+   
+}
+```
 
 ---
 
 ### 2. Method Overriding (Run-Time Polymorphism)
 
 در کلاس فرزند، متدی را که در کلاس والد تعریف شده است، با رفتار متفاوت بازنویسی می‌کنیم.
-**(جایگذاری مثال مربوط به Overriding)**
+```csharp
+public class Shape
+{
+    public virtual void Draw() => Console.WriteLine("Drawing a shape");
+}
+
+public class Circle : Shape
+{
+    //we override the virtual method from base class
+    public override void Draw() => Console.WriteLine("Drawing a Circle");
+    
+}
+
+public class Triangle : Shape
+{
+    //This uses the virtual method from the base class
+}
+```
 
 ---
 
