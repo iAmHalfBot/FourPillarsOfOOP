@@ -178,3 +178,47 @@ myCamera.Photo();
 
 چندریختی به این معناست که یک تابع یا شی می‌تواند رفتارهای متفاوتی در شرایط مختلف از خود نشان دهد.
 در این بخش به **چهار نوع اصلی چندریختی** می‌پردازیم:
+### 1. Ad-hoc Polymorphism (Static Polymorphism) 
+
+```csharp
+public class Arithmetic
+{
+    // Method overloading   
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+    public double Add(double a, double b)
+    {
+        return a + b;
+    }
+   
+}
+```
+### 2. Parametric Polymorphism
+
+```csharp
+public class Box<T>
+{
+    public T Value;
+}
+
+//here we define our type for the new instance of the Box and we define value
+var randomBox = new Box<string>{Value = "random data"};
+
+Console.WriteLine(randomBox.Value);
+
+
+public class ListBox<T>
+{
+    public List<T> Items = new List<T>();
+}
+
+var randomListBox = new ListBox<string>{Items = {"random data", "more random data"}};
+foreach (var item in randomListBox.Items)
+{    
+    Console.WriteLine(item);
+}
+```
+### 3. Subtype (Inclusion) Polymorphism
+
