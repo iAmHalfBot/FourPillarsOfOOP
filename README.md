@@ -179,6 +179,9 @@ myCamera.Photo();
 
 
 
+
+#### -Method Hiding
+
 ---
 
 ## 🎭 چندریختی (Polymorphism)
