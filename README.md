@@ -172,6 +172,7 @@ var myCamera = new Camera{Model = "myRandomCamera"};
 myCamera.Photo();
 ```
 
+### Beyond the Basics
 
 
 
