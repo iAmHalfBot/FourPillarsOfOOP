@@ -340,4 +340,4 @@ public class Sorter {
 ---
 
 
-##🔒 کپسوله‌سازی (Encapsulation)
+## 🔒 کپسوله‌سازی (Encapsulation)
