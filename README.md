@@ -337,4 +337,7 @@ public class Sorter {
 
 
 
+---
 
+
+##🔒 کپسوله‌سازی (Encapsulation)
