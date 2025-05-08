@@ -347,6 +347,18 @@ public class Sorter {
 
 ### 1. Member Variable Encapsulation
 
+در Member Variable Encapsulation (مخفی‌سازی متغیرهای عضو)، متغیرهای داخلی یک کلاس به صورت private تعریف می‌شوند تا از دسترسی مستقیم کد بیرونی جلوگیری شود و تنها از طریق متدهای عمومی (getter و setter) بتوان به آنها دسترسی داشت. این کار باعث حفظ یکپارچگی داده‌ها و کنترل بهتر روی نحوه خواندن و نوشتن مقادیر می‌شود.
+
+```csharp
+public class Person
+{
+    private string _name;
+
+    public void SetName(string inputName) => _name = inputName;
+
+    public void GetName() => return _name;
+}
+```
 
 
 
