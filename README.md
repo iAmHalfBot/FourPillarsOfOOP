@@ -367,5 +367,15 @@ public class Person
 
 در Function Encapsulation (کپسوله‌سازی توابع) برخی از توابع یک کلاس به‌صورت خصوصی (private) تعریف می‌شوند تا از دسترسی مستقیم بیرونی جلوگیری شود. این کار باعث می‌شود جزئیات پیاده‌سازی داخلی پنهان بماند و تنها از طریق توابع عمومی (public) که به‌عنوان رابط در اختیار کاربر قرار می‌گیرند، بتوان با آن‌ها تعامل داشت.
 کپسوله‌سازی توابع باعث افزایش امنیت، ساده‌تر شدن رابط کاربری کلاس و افزایش انعطاف‌پذیری در توسعه و نگهداری کد می‌شود.
+```csharp
+public class Tax
+{
+    //the 0.05 is just an example
+    //we hide the logic behind calculating the tax in the private TaxNum method 
+    private double TaxNum(double inputNum) => inputNum * 0.05;
+    //then we use the public Total method as an interface 
+    public double Total(double inputNum) => inputNum + TaxNum(inputNum);
+}
+```
 
 ### 3. Class Encapsulation
