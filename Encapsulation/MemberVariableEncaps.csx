@@ -4,6 +4,6 @@ public class Person
 
     public void SetName(string inputName) => _name = inputName;
 
-    public void GetName() => return _name;
+    public string GetName() => _name;
 }
 
