@@ -385,4 +385,39 @@ public class Tax
 
 در Class Encapsulation (کپسوله‌سازی کلاس) تمامی فیلدها و متدهای داخلی را با دسترسی `private` تعریف می‌کنیم تا از تغییر یا دسترسی مستقیم به آنها توسط کد بیرونی جلوگیری شود. سپس با ارائه متدها یا پراپرتی‌های `public` به‌عنوان رابط، کنترل کامل بر نحوهٔ خواندن و تغییر وضعیت درون کلاس داریم. در زبان سی‌شارپ می‌توانیم برای مخفی‌سازی مطلق یک کلاس، آن را به‌صورت تو‌در‌تو (nested) و با صفت دسترسی `private` تعریف کنیم؛ در این صورت تنها کلاس والد قادر به ایجاد یا فراخوانی آن خواهد بود و هیچ کدی خارج از ساختار والدین به جزئیات پیاده‌سازی دسترسی نخواهد داشت.
 
+```csharp
+public class Account
+{
+    private class PasswordManager
+    {
+        private string _password;
 
+        public PasswordManager(string password)
+        {
+            _password = password;
+        }
+        
+        public bool PassChecker(string input)
+        {
+            return _password == input;
+        }
+    } 
+
+    private string _username;
+    
+    private PasswordManager _passwordManager;
+    
+    public Account(string username, string password)
+    {
+        _username = username;
+
+        _passwordManager = new PasswordManager(password);
+    }
+
+    public bool login(string password)
+    {
+        return _passwordManager.PassChecker(password);
+    }
+
+}
+```
