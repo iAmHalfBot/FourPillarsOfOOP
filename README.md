@@ -330,7 +330,7 @@ public class Sorter {
 
 
 
-#### -liskov substitution principle (LSP)
+#### -Liskov Substitution Principle (LSP)
 
 
 
