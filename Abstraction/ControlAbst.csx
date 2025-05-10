@@ -1,29 +1,31 @@
-public abstract class Shape
+public class SearchAlgo
 {
-    public abstract double Area();
-    
-    public void Display()
+    public int Search(int[] array, int target)
     {
-        Console.WriteLine("this is a shape");
+        return BinarySearch(array, target, 0, array.Length - 1);
+    }
+
+    private int BinarySearch(int[] array,int target,int left,int right)
+    {
+
+        while(left <= right)
+        {
+            int mid = left + (right - left) / 2;
+            if(array[mid] == target)
+            {
+                return mid;
+            }
+            else if(array[mid] < target)
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid - 1;
+            }
+        }
+
+        return -1;
     }
 }
-
-
-public class Rectangle : Shape
-{
-    double height;
-    double width;
-    
-    public Rectangle(double height, double width)
-    {
-        this.height = height;
-        this.width = width;
-    }
-    public override double Area()
-    {
-        return height * width;
-    }
-}
-
-
 
