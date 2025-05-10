@@ -433,3 +433,37 @@ public class Account
 ### 1. Data Abstraction
 
 انتزاع داده (Data Abstraction) به معنی پنهان‌سازی جزئیات پیچیدهٔ پیاده‌سازی و ارائهٔ یک رابط ساده و مشخص برای استفاده‌کننده‌ها است. در این نوع انتزاع، تنها ویژگی‌ها و متدهای ضروری به صورت عمومی در دسترس قرار می‌گیرند و جزئیات داخلی کلاس (مانند نحوهٔ ذخیره‌سازی داده‌ها یا الگوریتم‌های پردازشی) مخفی می‌شوند.
+
+```csharp
+public class BankAccount
+{
+   private double _balance;
+
+   public BankAccount(double initialAmount)
+   {
+       _balance = initialAmount;
+   }
+
+
+   public double ShowBalance()
+   {
+       return _balance;
+   }
+
+   public void Deposit(double amount) 
+   {
+       if (amount > 0)
+       {
+           _balance += amount;
+       }
+   }
+
+   public void Wihtdraw(double amount)
+   {
+       if (amount > 0 && amount <= _balance)
+        {
+           _balance -= amount;
+        }
+   }
+}
+```
