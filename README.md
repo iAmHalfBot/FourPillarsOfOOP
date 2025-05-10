@@ -467,3 +467,37 @@ public class BankAccount
    }
 }
 ```
+
+### 2. Control Abstraction
+
+
+انتزاع کنترل (Control Abstraction) به پنهان‌سازی جزئیات نحوهٔ اجرای عملیات پشت یک رابط ساده اشاره دارد، به‌طوری که کاربر تنها با فراخوانی یک متد سطح بالا سر و کار دارد و از مراحل داخلی بی‌اطلاع می‌ماند.
+
+```csharp
+public abstract class Shape
+{
+    public abstract double Area();
+    
+    public void Display()
+    {
+        Console.WriteLine("this is a shape");
+    }
+}
+
+
+public class Rectangle : Shape
+{
+    double height;
+    double width;
+    
+    public Rectangle(double height, double width)
+    {
+        this.height = height;
+        this.width = width;
+    }
+    public override double Area()
+    {
+        return height * width;
+    }
+}
+```
