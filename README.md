@@ -474,30 +474,36 @@ public class BankAccount
 انتزاع کنترل (Control Abstraction) به پنهان‌سازی جزئیات نحوهٔ اجرای عملیات پشت یک رابط ساده اشاره دارد، به‌طوری که کاربر تنها با فراخوانی یک متد سطح بالا سر و کار دارد و از مراحل داخلی بی‌اطلاع می‌ماند.
 
 ```csharp
-public abstract class Shape
+public class SearchAlgo
 {
-    public abstract double Area();
-    
-    public void Display()
+    public int Search(int[] array, int target)
     {
-        Console.WriteLine("this is a shape");
+        return BinarySearch(array, target, 0, array.Length - 1);
     }
-}
 
+    private int BinarySearch(int[] array,int target,int left,int right)
+    {
 
-public class Rectangle : Shape
-{
-    double height;
-    double width;
-    
-    public Rectangle(double height, double width)
-    {
-        this.height = height;
-        this.width = width;
-    }
-    public override double Area()
-    {
-        return height * width;
+        while(left <= right)
+        {
+            int mid = left + (right - left) / 2;
+            if(array[mid] == target)
+            {
+                return mid;
+            }
+            else if(array[mid] < target)
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid - 1;
+            }
+        }
+
+        return -1;
     }
 }
 ```
+---
+
