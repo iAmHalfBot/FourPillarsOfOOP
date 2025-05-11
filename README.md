@@ -175,29 +175,6 @@ myCamera.Photo();
 ---
 
 
-### Beyond the Basics
-
-
-
-
-#### -Method Hiding
-
-در زبان csharp «پنهان‌سازی متد» (Method Hiding) زمانی رخ می‌دهد که یک کلاس مشتق‌شده، متدی با همان نام متد موجود در کلاس پایه تعریف می‌کند و از کلیدواژه new برای پنهان‌سازی نسخهٔ کلاس پایه استفاده می‌کند. در این حالت، متد جدید جایگزین متد کلاس پایه نمی‌شود، بلکه آن را در کلاس مشتق‌شده پنهان می‌کند.
-
-
-
-```csharp
-public class Animal
-{
-    public void MakesSound() => Console.WriteLine("the animal makes a sound");
-}
-
-public class Dog : Animal
-{
-    //here we hide the MakesSound method from animal class  
-    public new void MakesSound() => Console.WriteLine("the dog barks");
-}
-```
 
 ---
 
@@ -509,5 +486,27 @@ public class SearchAlgo
 ```
 ---
 ### Beyond the Basics
+
+
+
+
+#### -Method Hiding
+
+در زبان csharp «پنهان‌سازی متد» (Method Hiding) زمانی رخ می‌دهد که یک کلاس مشتق‌شده، متدی با همان نام متد موجود در کلاس پایه تعریف می‌کند و از کلیدواژه new برای پنهان‌سازی نسخهٔ کلاس پایه استفاده می‌کند. در این حالت، متد جدید جایگزین متد کلاس پایه نمی‌شود، بلکه آن را در کلاس مشتق‌شده پنهان می‌کند.
+
+
+
+```csharp
+public class Animal
+{
+    public void MakesSound() => Console.WriteLine("the animal makes a sound");
+}
+
+public class Dog : Animal
+{
+    //here we hide the MakesSound method from animal class  
+    public new void MakesSound() => Console.WriteLine("the dog barks");
+}
+```
 
 ---
